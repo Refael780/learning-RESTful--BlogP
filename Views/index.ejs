@@ -1,0 +1,50 @@
+<%include ./partials/header%>
+<div class="ui main text container segment">
+        <div class="ui huge header"> Blogs by RESTful</div>
+     <div class="ui to attached segment">
+        <div class="ui divided items">
+    
+            <% Blog.forEach(function(element) {%>
+            <div class="item">
+              
+                   <div class="image">
+                        <img src="<%=element.image %>">
+                    </div>
+                    <div class="content">
+                   
+                   <a class="header" href="/blog/<%=element._id%>"><%=element.title%></a>
+                    <div class="meta">
+                        <span><%= element.created.toDateString()%></span>
+                    </div>
+
+                    <div class="description">
+                        
+                   <% if(element.body && element.body.length > 0) { %>
+                    <p><%= element.body.substring(0, 57)%> ...</p>
+            <% } %> 
+                        </div>
+                   
+                        <div class="extra">
+                                <a class="ui floated basic violet button" href="/blogs/<%= element._id%>">Read More ..</a>
+
+                            
+                            </div>
+                            <div class="extra">
+                                <a class="ui floated basic violet button" href="/blogs/<%= element._id%>">Read More ..</a>
+
+                            
+                            </div>
+                   
+                   
+                        </div>
+
+                   
+            </div>
+            <%});%>
+            
+     </div>
+    </div>
+    </div>
+
+
+<%include ./partials/footer%>

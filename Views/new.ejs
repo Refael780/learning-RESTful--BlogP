@@ -1,0 +1,24 @@
+
+<%include ./partials/header%>
+
+<h1>Add a new Comment</h1>
+<div class="ui main text container segment">
+    <div class="ui huge header">New BLog</div>
+    <form  method="POST" action="/blogs" class="ui form">
+        <div class="field">
+        <label>title</label>
+        <input type="text" name="blog[title]" placeholder="Title">
+        </div>
+        <div class="field">
+        <label>Image</label>
+        <input type="text" name="blog[image]" placeholder="image URL">
+        </div>
+        <div class="field">
+            <label>Text</label>
+            <textarea placeholder="Write your Comment Here" name="blog[body]"></textarea>
+        </div>
+        <button class="ui violet basic button big" type="submit">Submit</button>
+    </form>
+    
+</div>
+  <%include ./partials/footer%>
